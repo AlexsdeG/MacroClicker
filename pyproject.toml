@@ -1,0 +1,111 @@
+[build-system]
+requires = ["setuptools>=80.9.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "macroposflow"
+version = "0.1.0"
+description = "A modular Python project that records & replays mouse/keyboard actions"
+readme = "README.md"
+requires-python = ">=3.10.11"
+license = {text = "MIT"}
+authors = [
+    {name = "MacroPosFlow Team", email = "contact@macroposflow.com"},
+]
+maintainers = [
+    {name = "MacroPosFlow Team", email = "contact@macroposflow.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Automation",
+    "Topic :: Utilities",
+]
+keywords = ["automation", "mouse", "keyboard", "macro", "recording", "replay"]
+dependencies = [
+    "pyautogui>=0.9.54",
+    "pynput>=1.8.1",
+    "mss>=10.1.0",
+    "numpy>=2.2.6",
+    "console-menu>=0.8.0",
+    "simple-term-menu>=1.6.6",
+    "pillow>=11.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.2",
+    "pytest-mock>=3.15.1",
+    "flake8>=7.3.0",
+    "black>=25.9.0",
+    "isort>=6.0.1",
+]
+ocr = [
+    "pytesseract>=0.3.13",
+]
+opencv = [
+    "opencv-python>=4.12.0.88",
+]
+all = [
+    "pytesseract>=0.3.13",
+    "opencv-python>=4.12.0.88",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/MacroPosFlow"
+Repository = "https://github.com/your-username/MacroPosFlow"
+Documentation = "https://github.com/your-username/MacroPosFlow/blob/main/README.md"
+"Bug Tracker" = "https://github.com/your-username/MacroPosFlow/issues"
+
+[project.scripts]
+macroposflow = "macroposflow.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["macroposflow*"]
+exclude = ["tests*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["macroposflow"]

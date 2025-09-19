@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "name": "sample-macro",
+    "author": "MacroPosFlow",
+    "created": "2025-06-17",
+    "description": "A sample macro demonstrating basic click and wait actions"
+  },
+  "actions": [
+    {
+      "type": "click",
+      "monitor": 1,
+      "rel_x": 0.5,
+      "rel_y": 0.5,
+      "button": "left",
+      "delay": 0.2
+    },
+    {
+      "type": "wait",
+      "seconds": 1.0
+    },
+    {
+      "type": "click",
+      "monitor": 1,
+      "rel_x": 0.3,
+      "rel_y": 0.7,
+      "button": "left",
+      "delay": 0.1
+    }
+  ]
+}
