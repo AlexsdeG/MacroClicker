@@ -1,0 +1,55 @@
+{
+  "key_bindings": {
+    "record_start_stop": [
+      "ctrl",
+      "f8"
+    ],
+    "record_pause_resume": [
+      "ctrl",
+      "f9"
+    ],
+    "record_position": [
+      "ctrl",
+      "f10"
+    ],
+    "record_alt_click": [
+      "ctrl",
+      "right"
+    ],
+    "execute_start_stop": [
+      "ctrl",
+      "f8"
+    ],
+    "execute_pause_resume": [
+      "ctrl",
+      "f9"
+    ],
+    "execute_kill": [
+      "ctrl",
+      "shift",
+      "esc"
+    ],
+    "global_emergency_stop": [
+      "esc"
+    ]
+  },
+  "execution": {
+    "default_loop_count": 1,
+    "default_delay": 0.1,
+    "enable_randomness": false,
+    "randomness_radius": 5,
+    "enable_smoothing": true,
+    "smoothing_duration": 0.1
+  },
+  "recording": {
+    "default_delay": 0.1,
+    "enable_auto_timestamp": true,
+    "show_real_time_feedback": true
+  },
+  "ui": {
+    "show_action_count": true,
+    "show_timing_info": true,
+    "confirm_destructive_actions": true,
+    "verbose_logging": false
+  }
+}
